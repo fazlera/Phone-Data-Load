@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phone-Data-Load</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1 class="text-6xl text-center font-bold text-orange-700">Phone Data Load</h1>
+      <h1 class="text-6xl text-center font-bold text-orange-700">
+        Phone Data Load
+      </h1>
     </header>
 
-    <main class="w-10/12 mx-auto"> 
-        <section class="bg-slate-200 p-2  mx-auto">
-            <input id="search-input" type="text" placeholder="Search" class="input input-bordered input-primary w-full max-w-xs" />
+    <main class="w-10/12 mx-auto">
+      <section class="bg-slate-200 p-2 mx-auto">
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search"
+          class="input input-bordered input-primary w-full max-w-xs"
+        />
 
-            <button onclick="handelButton()" class="btn btn-accent">Accent</button>
-        </section>
+        <button onclick="handelButton()" class="btn btn-accent">Accent</button>
+      </section>
 
-        <section>
-            <div id="phone-container" class=" mx-auto grid  gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-10" >
+      <section>
+        <!-- loading spinier -->
+        <div id="loading-spinner" class="text-center my-20 hidden">
+          <span class="loading loading-dots text-red-600 loading-lg"></span>
+        </div>
+        <div
+          id="phone-container"
+          class="mx-auto grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10"
+        ></div>
 
+        <div
+          onclick="showAllButtonOnDisplay()"
+          id="show-all-btn"
+          class="hidden text-center my-10"
+        >
+          <button class="btn btn-secondary">show all</button>
+        </div>
+      </section>
+
+      <!-- show details modal -->
+      <!-- Open the modal using ID.showModal() method -->
+      <!-- <button class="btn" onclick="show_details_modal.showModal()">open modal</button> -->
+      <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+        <form method="dialog" class="modal-box">
+          <h3 id="show-phone-name" class="font-bold text-lg"></h3>
+            <div id="show-details-container">
+                
             </div>
-
-            <div  id="show-all-btn" class="hidden">
-                <button class="btn btn-secondary">show all</button>
-            </div>
-        </section>
+          
+          <div class="modal-action">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </div>
+        </form>
+      </dialog>
     </main>
 
-    <footer>
-
-
-    </footer>
+    <footer></footer>
 
     <script src="js/phone.js"></script>
-</body>
+  </body>
 </html>
