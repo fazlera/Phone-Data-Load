@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone-Data-Load</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <h1 class="text-6xl text-center font-bold text-orange-700">Phone Data Load</h1>
+    </header>
+
+    <main class="w-10/12 mx-auto"> 
+        <section class="bg-slate-200 p-2  mx-auto">
+            <input id="search-input" type="text" placeholder="Search" class="input input-bordered input-primary w-full max-w-xs" />
+
+            <button onclick="handelButton()" class="btn btn-accent">Accent</button>
+        </section>
+
+        <section>
+            <div id="phone-container" class=" mx-auto grid  gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-10" >
+
+            </div>
+
+            <div  id="show-all-btn" class="hidden">
+                <button class="btn btn-secondary">show all</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+
+    </footer>
+
+    <script src="js/phone.js"></script>
+</body>
+</html>
